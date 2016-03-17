@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' ?>
+<Config>
+  <OPCServer ConnectionString="OPC.SimaticNET">
+    <OPCGroup GroupName="PLCGroup" GroupString="S7:[PLCCar]" UpdateRate="350">
+      <!--第5巷道输送机-->
+      <OPCItem ItemName="117_TaskNo" ClientHandler="201" OPCItemName="DB1,CHAR1600,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="117_PalletCode" ClientHandler="202" OPCItemName="DB1,CHAR1610,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="117_WriteTaskNo" ClientHandler="203" OPCItemName="DB1,CHAR1600,26"  ItemType="WRITE" />
+      <OPCItem ItemName="117_StockRequest" ClientHandler="204" OPCItemName="DB1,INT1630,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="117_HasProduct" ClientHandler="205" OPCItemName="DB1,X1657.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="117_WriteFinished" ClientHandler="206" OPCItemName="DB1,INT1660,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="118_TaskNo" ClientHandler="210" OPCItemName="DB1,CHAR1700,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="118_HasProduct" ClientHandler="211" OPCItemName="DB1,X1757.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="118_WriteFinished" ClientHandler="212" OPCItemName="DB1,INT1760,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="119_TaskNo" ClientHandler="220" OPCItemName="DB1,CHAR1800,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="119_HasProduct" ClientHandler="222" OPCItemName="DB1,X1857.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="119_WriteFinished" ClientHandler="223" OPCItemName="DB1,INT1860,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="120_TaskNo" ClientHandler="231" OPCItemName="DB1,CHAR1900,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="120_WriteTaskNo" ClientHandler="232" OPCItemName="DB1,CHAR1900,26"  ItemType="WRITE" />
+      <OPCItem ItemName="120_HasProduct" ClientHandler="233" OPCItemName="DB1,X1957.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="120_WriteFinished" ClientHandler="234" OPCItemName="DB1,INT1960,1"  ItemType="WRITE" />
+    </OPCGroup>
+  </OPCServer>
+</Config>

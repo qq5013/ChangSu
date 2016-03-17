@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SqlCommand>
+  <!--任务信息-->
+  <Command ID="SelectWmsTask">
+    <CommandString>
+      select * from IDX_ASRS_RECEIVE
+      Where {0}
+      order by PRIORITY,TASKID
+    </CommandString>
+  </Command>
+  
+  <Command ID="SelectWCSTask">
+    <CommandString>
+      select case when TASKTYPE='OB' then decode(TASKSTATUS,'1','堆垛机出库', '2','到达出库端', '3','输送机出库','完成')
+      when TASKTYPE='IB' then decode(TASKSTATUS,'1','入库请求', '2','到达入库端', '3','堆垛机入库','完成') end as STATUSDESC ,T.*
+      from WCS_TASK T
+      Where {0}
+      order by READTIME
+    </CommandString>
+  </Command>
+  <Command ID="SPReciveWmsTask">
+    <CommandString>
+      SP_RECIVEWMSTASK
+    </CommandString>
+  </Command>
+
+  <Command ID="UpdateWCSTaskState">
+    <CommandString>
+      update WCS_TASK set TASKSTATUS='{0}' Where TASKID='{1}'
+    </CommandString>
+  </Command>
+
+  <Command ID="UpdateWCSTaskStateByStatus">
+    <CommandString>
+      update WCS_TASK set TASKSTATUS='{0}' Where TASKID='{1}' and TASKSTATUS='{2}'
+    </CommandString>
+  </Command>
+
+  <Command ID="SpTaskFinished">
+    <CommandString>
+      SP_TASKFINISHED
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectCraneWarning">
+    <CommandString>
+      select * from  WCS_CRANEWARNING  
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectWCSCELL">
+    <CommandString>
+      select * from WCS_CELL
+      order by SHELFCODE,CELLCOLUMN,CELLROW
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectWCSShelf">
+    <CommandString>
+      select distinct shelfcode from wcs_cell
+      order by ShelfCode
+    </CommandString>
+  </Command>
+  <Command ID="UpdateCellByFilter">
+    <CommandString>
+        Update wcs_cell set {0} where {1}
+    </CommandString>
+  </Command>
+
+
+  <Command ID="SelectTaskQuery">
+    <CommandString>
+      select TASK.*,STATEDESC from VIEW_WCS_TASK TASK
+      LEFT JOIN WCS_TABLESTATE ON TASK.TASKSTATUS=WCS_TABLESTATE.STATE AND TABLENAME='WCS_TASK' AND FIELDNAME='STATE'
+      Where {0}
+      order by READTIME
+    </CommandString>
+  </Command>
+
+
+  <Command ID="SPHandleTaskError">
+    <CommandString>
+      SP_HANDLETASKERROR
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectWmsSend">
+    <CommandString>
+     select * from IDX_ASRS_SEND 
+     where {0} 
+    </CommandString>
+  </Command>
+
+  <Command ID="SPCancelTask">
+    <CommandString>
+      SP_CANCELTASK
+    </CommandString>
+  </Command>
+
+  <Command ID="InsertDataLog">
+    <CommandString>
+      insert into WCS_LOGINFO(LOGLEVEL,USERID,LOGDATE,LOGMSG) values('{0}','{1}',SYSDATE,'{2}')
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectUser">
+    <CommandString>
+      select * from WCS_USER Where USERID='{0}' and PWD='{1}'
+    </CommandString>
+  </Command>
+
+
+  <Command ID="SelectUserByName">
+    <CommandString>
+      select * from WCS_USER Where USERID='{0}' 
+    </CommandString>
+  </Command>
+  <Command ID="InserUser">
+    <CommandString>
+      INSERT INTO  WCS_USER(USERID,PWD) VALUES('{0}','{1}')
+    </CommandString>
+  </Command>
+  <Command ID="UpdateUser">
+    <CommandString>
+      update WCS_USER set PWD='{1}' where USERID='{0}'
+    </CommandString>
+  </Command>
+
+  <Command ID="SelectWCSCRANE">
+    <CommandString>
+      select t.*,decode(t.ISENABLED,'1','启用', '0','禁用')  as ENABLEDNAME from WCS_CRANE t
+      order by CRANENO
+    </CommandString>
+  </Command>
+  <Command ID="UpdateWCSCrane">
+    <CommandString>
+      update WCS_CRANE set ISENABLED='{0}' where CRANENO='{1}'
+    </CommandString>
+  </Command>
+
+</SqlCommand>

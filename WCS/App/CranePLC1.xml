@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' ?>
+<Config>
+  <OPCServer ConnectionString="OPC.SimaticNET">
+    <OPCGroup GroupName="DefaultGroup" GroupString="S7:[PLC01]" UpdateRate="350">
+      <OPCItem ItemName="b_O_HandShake" ClientHandler="1" OPCItemName="DB540,X0.0,1" ItemType="WRITE"/>
+      <OPCItem ItemName="b_O_Auto" ClientHandler="2" OPCItemName="DB540,X0.1,1" ItemType="WRITE"/>
+      <OPCItem ItemName="b_O_Reset" ClientHandler="3" OPCItemName="DB540,X0.2,1" ItemType="WRITE"/>
+      <OPCItem ItemName="b_O_Acknowledge" ClientHandler="4" OPCItemName="DB540,X0.3,1" ItemType="WRITE"/>
+      <OPCItem ItemName="b_O_Initialize" ClientHandler="5" OPCItemName="DB540,X0.4,1" ItemType="WRITE"/>
+      <OPCItem ItemName="CancelTask" ClientHandler="6" OPCItemName="DB540,X0.6,1" ItemType="WRITE"/>
+      <OPCItem ItemName="CallBack" ClientHandler="7" OPCItemName="DB540,X1.1,1" ItemType="WRITE"/>
+      <OPCItem ItemName="Address" ClientHandler="8" OPCItemName="DB540,INT24,6" ItemType="WRITE"/>
+      <OPCItem ItemName="WriteTask" ClientHandler="9" OPCItemName="DB540,CHAR36,20" ItemType="WRITE"/>
+      <OPCItem ItemName="WriteFinish" ClientHandler="10" OPCItemName="DB540,X0.5,1" ItemType="WRITE"/>
+
+      <OPCItem ItemName="b_I_HandShake" ClientHandler="11" OPCItemName="DB541,X0.0,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="b_I_Local" ClientHandler="12" OPCItemName="DB541,X0.5,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="b_I_Auto" ClientHandler="13" OPCItemName="DB541,X0.7,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="b_I_Alarm" ClientHandler="14" OPCItemName="DB541,X1.0,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="b_I_Warning" ClientHandler="15" OPCItemName="DB541,X1.1,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="TaskFinish" ClientHandler="16" OPCItemName="DB541,X1.2,1" ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="GetRequest" ClientHandler="17" OPCItemName="DB541,X0.3,1" ItemType="WRITE"/>
+      <OPCItem ItemName="PutRequest" ClientHandler="18" OPCItemName="DB541,X0.4,1" ItemType="WRITE"/>
+
+      <OPCItem ItemName="b_I_Loaded" ClientHandler="19" OPCItemName="DB541,X1.3,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="nAlarmCode" ClientHandler="20" OPCItemName="DB541,INT6,1" ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="nState" ClientHandler="21" OPCItemName="DB541,INT8,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="ReadTaskNo" ClientHandler="22" OPCItemName="DB541,CHAR80,12" ItemType="WRITE" IsActive="false"/>
+      <OPCItem ItemName="ReadPalletCode" ClientHandler="23" OPCItemName="DB541,CHAR92,8" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="ReadColumn" ClientHandler="24" OPCItemName="DB541,B3,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="ReadRow" ClientHandler="25" OPCItemName="DB541,B4,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="ClearTaskNo" ClientHandler="26" OPCItemName="DB541,CHAR80,20" ItemType="WRITE" />
+      <OPCItem ItemName="b_I_Fork_Zero" ClientHandler="27" OPCItemName="DB541,X1.4,1" ItemType="READ" IsActive="false"/>
+    </OPCGroup>
+  </OPCServer>
+</Config>

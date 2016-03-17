@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <LogLevel>DEBUG</LogLevel>
+  <Attributes>
+    <Attribute Name="LedCollection" Value="1,192.168.127.64;2,192.168.127.65;3,192.168.127.66;4,192.168.127.67;5,192.168.127.68;6,192.168.127.69;7,192.168.127.70;8,192.168.127.71;9,192.168.127.72;10,192.168.127.73" />
+  </Attributes>
+  <Services>
+    <Service Name="CarPLC" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CarPLC.xml" />
+    <Service Name="CranePLC1" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CranePLC1.xml" />
+    <Service Name="CranePLC2" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CranePLC2.xml" />
+    <Service Name="CranePLC3" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CranePLC3.xml" />
+    <Service Name="CranePLC4" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CranePLC4.xml" />
+    <Service Name="CranePLC5" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="CranePLC5.xml" />
+  </Services>
+  <Processes>
+    <!--堆垛机Process-->
+    <Process Name="CraneProcess" Type="Dispatching.dll, Dispatching.Process.CraneProcess">
+      <Item ServiceName="CranePLC1" ItemName="TaskFinish" />
+      <Item ServiceName="CranePLC1" ItemName="nAlarmCode" />
+      <Item ServiceName="CranePLC2" ItemName="TaskFinish" />
+      <Item ServiceName="CranePLC2" ItemName="nAlarmCode" />
+      <Item ServiceName="CranePLC3" ItemName="TaskFinish" />
+      <Item ServiceName="CranePLC3" ItemName="nAlarmCode" />
+      <Item ServiceName="CranePLC4" ItemName="TaskFinish" />
+      <Item ServiceName="CranePLC4" ItemName="nAlarmCode" />
+      <Item ServiceName="CranePLC5" ItemName="TaskFinish" />
+      <Item ServiceName="CranePLC5" ItemName="nAlarmCode" />
+    </Process>
+    <!--小车Process-->
+    <Process Name="CarProcess" Type="Dispatching.dll, Dispatching.Process.CarProcess">
+      <Item ServiceName="CarPLC" ItemName="101_StockRequest" />
+      <Item ServiceName="CarPLC" ItemName="105_StockRequest" />
+      <Item ServiceName="CarPLC" ItemName="109_StockRequest" />
+      <Item ServiceName="CarPLC" ItemName="113_StockRequest" />
+      <Item ServiceName="CarPLC" ItemName="117_StockRequest" />
+    </Process>
+    <!--LED Process-->
+    <Process Name="LEDProcess" Type="Dispatching.dll, Dispatching.Process.LEDProcess" >
+      <Item ServiceName="CarPLC" ItemName="101_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="102_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="103_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="104_TaskNo" />
+      <Item ServiceName="CranePLC1" ItemName="nAlarmCode" />
+      <Item ServiceName="CarPLC" ItemName="105_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="106_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="107_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="108_TaskNo" />
+      <Item ServiceName="CranePLC2" ItemName="nAlarmCode" />
+    </Process>
+    <Process Name="LEDProcess2" Type="Dispatching.dll, Dispatching.Process.LEDProcess2" >
+      <Item ServiceName="CarPLC" ItemName="109_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="110_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="111_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="112_TaskNo" />
+      <Item ServiceName="CranePLC3" ItemName="nAlarmCode" />
+      <Item ServiceName="CarPLC" ItemName="113_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="114_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="115_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="116_TaskNo" />
+      <Item ServiceName="CranePLC4" ItemName="nAlarmCode" />
+      <Item ServiceName="CarPLC" ItemName="117_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="118_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="119_TaskNo" />
+      <Item ServiceName="CarPLC" ItemName="120_TaskNo" />
+      <Item ServiceName="CranePLC5" ItemName="nAlarmCode" />
+    </Process>
+  </Processes>
+</Configuration>

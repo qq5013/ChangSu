@@ -1,0 +1,109 @@
+﻿<?xml version='1.0' ?>
+<Config>
+  <OPCServer ConnectionString="OPC.SimaticNET">
+    <OPCGroup GroupName="PLCGroup" GroupString="S7:[PLCCar]" UpdateRate="350">
+      <!--第1巷道输送机-->
+      <OPCItem ItemName="101_TaskNo" ClientHandler="1" OPCItemName="DB1,CHAR0,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="101_PalletCode" ClientHandler="2" OPCItemName="DB1,CHAR10,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="101_WriteTaskNo" ClientHandler="3" OPCItemName="DB1,CHAR00,26"  ItemType="WRITE" />
+      <OPCItem ItemName="101_StockRequest" ClientHandler="4" OPCItemName="DB1,INT30,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="101_HasProduct" ClientHandler="5" OPCItemName="DB1,X57.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="101_WriteFinished" ClientHandler="6" OPCItemName="DB1,INT60,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="102_TaskNo" ClientHandler="10" OPCItemName="DB1,CHAR100,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="102_HasProduct" ClientHandler="11" OPCItemName="DB1,X157.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="102_WriteFinished" ClientHandler="12" OPCItemName="DB1,INT160,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="103_TaskNo" ClientHandler="20" OPCItemName="DB1,CHAR200,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="103_HasProduct" ClientHandler="22" OPCItemName="DB1,X257.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="103_WriteFinished" ClientHandler="23" OPCItemName="DB1,INT260,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="104_TaskNo" ClientHandler="30" OPCItemName="DB1,CHAR300,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="104_WriteTaskNo" ClientHandler="31" OPCItemName="DB1,CHAR300,26"  ItemType="WRITE" />
+      <OPCItem ItemName="104_HasProduct" ClientHandler="32" OPCItemName="DB1,X357.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="104_WriteFinished" ClientHandler="33" OPCItemName="DB1,INT360,1"  ItemType="WRITE" />
+
+      <!--第2巷道输送机-->
+      <OPCItem ItemName="105_TaskNo" ClientHandler="61" OPCItemName="DB1,CHAR400,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="105_PalletCode" ClientHandler="62" OPCItemName="DB1,CHAR410,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="105_WriteTaskNo" ClientHandler="63" OPCItemName="DB1,CHAR400,26"  ItemType="WRITE" />
+      <OPCItem ItemName="105_StockRequest" ClientHandler="64" OPCItemName="DB1,INT430,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="105_HasProduct" ClientHandler="65" OPCItemName="DB1,X457.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="105_WriteFinished" ClientHandler="66" OPCItemName="DB1,INT460,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="106_TaskNo" ClientHandler="70" OPCItemName="DB1,CHAR500,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="106_HasProduct" ClientHandler="71" OPCItemName="DB1,X557.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="106_WriteFinished" ClientHandler="72" OPCItemName="DB1,INT560,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="107_TaskNo" ClientHandler="80" OPCItemName="DB1,CHAR600,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="107_HasProduct" ClientHandler="82" OPCItemName="DB1,X657.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="107_WriteFinished" ClientHandler="83" OPCItemName="DB1,INT660,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="108_TaskNo" ClientHandler="90" OPCItemName="DB1,CHAR700,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="108_WriteTaskNo" ClientHandler="91" OPCItemName="DB1,CHAR700,26"  ItemType="WRITE" />
+      <OPCItem ItemName="108_HasProduct" ClientHandler="92" OPCItemName="DB1,X757.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="108_WriteFinished" ClientHandler="93" OPCItemName="DB1,INT760,1"  ItemType="WRITE" />
+      <!--第3巷道输送机-->
+      <OPCItem ItemName="109_TaskNo" ClientHandler="101" OPCItemName="DB1,CHAR800,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="109_PalletCode" ClientHandler="102" OPCItemName="DB1,CHAR810,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="109_WriteTaskNo" ClientHandler="103" OPCItemName="DB1,CHAR800,26"  ItemType="WRITE" />
+      <OPCItem ItemName="109_StockRequest" ClientHandler="104" OPCItemName="DB1,INT830,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="109_HasProduct" ClientHandler="105" OPCItemName="DB1,X857.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="109_WriteFinished" ClientHandler="106" OPCItemName="DB1,INT860,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="110_TaskNo" ClientHandler="110" OPCItemName="DB1,CHAR900,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="110_HasProduct" ClientHandler="111" OPCItemName="DB1,X957.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="110_WriteFinished" ClientHandler="112" OPCItemName="DB1,INT960,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="111_TaskNo" ClientHandler="120" OPCItemName="DB1,CHAR1000,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="111_HasProduct" ClientHandler="122" OPCItemName="DB1,X1057.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="111_WriteFinished" ClientHandler="123" OPCItemName="DB1,INT1060,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="112_TaskNo" ClientHandler="130" OPCItemName="DB1,CHAR1100,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="112_WriteTaskNo" ClientHandler="131" OPCItemName="DB1,CHAR1100,26"  ItemType="WRITE" />
+      <OPCItem ItemName="112_HasProduct" ClientHandler="132" OPCItemName="DB1,X1157.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="112_WriteFinished" ClientHandler="133" OPCItemName="DB1,INT1160,1"  ItemType="WRITE" />
+
+      <!--第4巷道输送机-->
+      <OPCItem ItemName="113_TaskNo" ClientHandler="161" OPCItemName="DB1,CHAR1200,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="113_PalletCode" ClientHandler="162" OPCItemName="DB1,CHAR1210,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="113_WriteTaskNo" ClientHandler="163" OPCItemName="DB1,CHAR1200,26"  ItemType="WRITE" />
+      <OPCItem ItemName="113_StockRequest" ClientHandler="164" OPCItemName="DB1,INT1230,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="113_HasProduct" ClientHandler="165" OPCItemName="DB1,X1257.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="113_WriteFinished" ClientHandler="166" OPCItemName="DB1,INT1260,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="114_TaskNo" ClientHandler="170" OPCItemName="DB1,CHAR1300,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="114_HasProduct" ClientHandler="171" OPCItemName="DB1,X1357.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="114_WriteFinished" ClientHandler="172" OPCItemName="DB1,INT1360,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="115_TaskNo" ClientHandler="180" OPCItemName="DB1,CHAR1400,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="115_HasProduct" ClientHandler="182" OPCItemName="DB1,X1457.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="115_WriteFinished" ClientHandler="183" OPCItemName="DB1,INT1460,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="116_TaskNo" ClientHandler="191" OPCItemName="DB1,CHAR1500,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="116_WriteTaskNo" ClientHandler="192" OPCItemName="DB1,CHAR1500,26"  ItemType="WRITE" />
+      <OPCItem ItemName="116_HasProduct" ClientHandler="193" OPCItemName="DB1,X1557.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="116_WriteFinished" ClientHandler="194" OPCItemName="DB1,INT1560,1"  ItemType="WRITE" />
+      <!--第5巷道输送机-->
+      <OPCItem ItemName="117_TaskNo" ClientHandler="201" OPCItemName="DB1,CHAR1600,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="117_PalletCode" ClientHandler="202" OPCItemName="DB1,CHAR1610,8"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="117_WriteTaskNo" ClientHandler="203" OPCItemName="DB1,CHAR1600,26"  ItemType="WRITE" />
+      <OPCItem ItemName="117_StockRequest" ClientHandler="204" OPCItemName="DB1,INT1630,1"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="117_HasProduct" ClientHandler="205" OPCItemName="DB1,X1657.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="117_WriteFinished" ClientHandler="206" OPCItemName="DB1,INT1660,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="118_TaskNo" ClientHandler="210" OPCItemName="DB1,CHAR1700,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="118_HasProduct" ClientHandler="211" OPCItemName="DB1,X1757.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="118_WriteFinished" ClientHandler="212" OPCItemName="DB1,INT1760,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="119_TaskNo" ClientHandler="220" OPCItemName="DB1,CHAR1800,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="119_HasProduct" ClientHandler="222" OPCItemName="DB1,X1857.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="119_WriteFinished" ClientHandler="223" OPCItemName="DB1,INT1860,1"  ItemType="WRITE" />
+
+      <OPCItem ItemName="120_TaskNo" ClientHandler="231" OPCItemName="DB1,CHAR1900,27"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="120_WriteTaskNo" ClientHandler="232" OPCItemName="DB1,CHAR1900,26"  ItemType="WRITE" />
+      <OPCItem ItemName="120_HasProduct" ClientHandler="233" OPCItemName="DB1,X1957.0,1"  ItemType="READ"  IsActive="false"/>
+      <OPCItem ItemName="120_WriteFinished" ClientHandler="234" OPCItemName="DB1,INT1960,1"  ItemType="WRITE" />
+    </OPCGroup>
+  </OPCServer>
+</Config>
